@@ -21,21 +21,22 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String category;
-
-    @JsonProperty("correct_answer")
-    private String correctAnswer;
+    private String type;
 
     private String difficulty;
 
-    @ElementCollection
-    @JsonProperty("incorrect_answers")
-    private List<String> incorrectAnswers;
+    private String category;
 
     @Column(unique = true)
     @JsonProperty("question")
     private String questionStatement;
 
-    private String type;
+    @JsonProperty("correct_answer")
+    private String correctAnswer;
+
+    @ElementCollection
+    @JsonProperty("incorrect_answers")
+    private List<String> incorrectAnswers;
+
 
 }
